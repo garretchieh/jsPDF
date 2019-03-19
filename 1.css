@@ -1,0 +1,16 @@
+.flot {
+    left: 0px;
+    top: 0px;
+    width: 610px;
+    height: 250px;
+}
+.flot2 {
+    left: 0px;
+    top: 0px;
+    width: 610px;
+    height: 250px;
+}
+.pieLabel div {
+    color: white !important;
+    text-shadow: 0 0 4px #000;
+}

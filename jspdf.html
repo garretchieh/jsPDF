@@ -1,0 +1,54 @@
+<html>
+<head>
+
+  </head>
+
+<body >
+    <div id="customers">
+       <h1>jspdf</h1>
+    </div>
+    <button onclick="javascript:demoHTML();">PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.2.61/jspdf.debug.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script>
+    function demoHTML() {
+    var pdf = new jsPDF('p', 'pt', 'letter');
+   
+    source = $('#customers')[0];
+
+   
+    specialElementHandlers = {
+        
+        '#bypassme': function (element, renderer) {
+            
+            return true
+        }
+    };
+    margins = {
+        top: 80,
+        bottom: 60,
+        left: 40,
+        width: 522
+    };
+   
+    pdf.fromHTML(
+    source, // HTML string or DOM elem ref.
+    margins.left, 
+    margins.top, { 
+        'width': margins.width, 
+        'elementHandlers': specialElementHandlers
+    },
+
+    function (dispose) {
+       
+        pdf.save('Test.pdf');
+    }, margins);
+}
+    </script>
+
+ </body>
+  </html>
